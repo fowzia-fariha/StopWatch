@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Stopwatch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="page2.css">
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Pacifico', cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #0077be, #00aaff);
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Floating background animation */
+        @keyframes float-background {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Container Style */
+        .container {
+            text-align: center;
+            animation: float-background 5s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #00008B;
+            text-shadow: 2px 2px 4px #fff;
+        }
+
+        /* Stopwatch Display */
+        #stopwatch {
+            font-size: 60px;
+            font-weight: bold;
+            color: #00008B;
+            text-shadow: 2px 2px 4px #fff;
+        }
+
+        /* Floating animation for buttons */
+        @keyframes float-start {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes float-stop {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes float-reset {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Pacifico', cursive;
+            text-shadow: 1px 1px 3px #fff;
+        }
+
+        #start {
+            background-color: #009779;
+            color: white;
+            animation: float-start 3s ease-in-out infinite;
+        }
+
+        #stop {
+            background-color: #f39c12;
+            color: white;
+            animation: float-stop 4s ease-in-out infinite;
+        }
+
+        #reset {
+            background-color: #c91400;
+            color: white;
+            animation: float-reset 5s ease-in-out infinite;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Floating Stopwatch</h1>
+        <div id="stopwatch">
+            <span id="hr">00</span>:<span id="min">00</span>:<span id="sec">00</span>:<span id="count">00</span>
+        </div>
+        <div id="buttons">
+            <button id="start" class="btn">Start</button>
+            <button id="stop" class="btn">Stop</button>
+            <button id="reset" class="btn">Reset</button>
+        </div>
+    </div>
+
+    <script src="page3.js"></script>
+</body>
+</html>
